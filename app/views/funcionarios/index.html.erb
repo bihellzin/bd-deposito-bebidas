@@ -1,0 +1,10 @@
+<h1>Funcionários</h1>
+<ul>
+    <% @funcionarios.each do |funcionario| %>
+        <li>
+            <%= funcionario.nome %>
+            <%= funcionario.cargo %>
+            <%= funcionario.cpf %>
+        </li>
+    <% end %>
+</ul>
