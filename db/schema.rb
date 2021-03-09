@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_023914) do
+ActiveRecord::Schema.define(version: 2021_03_09_030956) do
 
   create_table "enderecos", force: :cascade do |t|
     t.string "logradouro"
@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 2021_03_09_023914) do
     t.string "estado"
     t.integer "numero"
     t.string "complemento"
+    t.integer "funcionario_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["funcionario_id"], name: "index_enderecos_on_funcionario_id"
   end
 
   create_table "funcionarios", force: :cascade do |t|
@@ -32,10 +34,11 @@ ActiveRecord::Schema.define(version: 2021_03_09_023914) do
   end
 
   create_table "telefones", force: :cascade do |t|
-    t.integer "residencial"
-    t.integer "celulares"
+    t.integer "numero"
+    t.integer "funcionario_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["funcionario_id"], name: "index_telefones_on_funcionario_id"
   end
 
 end
