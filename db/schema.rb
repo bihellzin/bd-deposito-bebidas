@@ -10,12 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_102503) do
+ActiveRecord::Schema.define(version: 2021_03_09_023914) do
+
+  create_table "enderecos", force: :cascade do |t|
+    t.string "logradouro"
+    t.string "bairro"
+    t.string "cidade"
+    t.string "estado"
+    t.integer "numero"
+    t.string "complemento"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "funcionarios", force: :cascade do |t|
     t.integer "cpf"
     t.string "nome"
     t.string "cargo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "telefones", force: :cascade do |t|
+    t.integer "residencial"
+    t.integer "celulares"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
