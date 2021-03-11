@@ -1,10 +1,21 @@
 <h1>Funcionários</h1>
-<ul>
-    <% @funcionarios.each do |funcionario| %>
-        <li>
-            <%= funcionario.nome %>
-            <%= funcionario.cargo %>
-            <%= funcionario.cpf %>
-        </li>
-    <% end %>
-</ul>
+<% @funcionarios.each do |funcionario| %>
+    <ul>
+        <li><%= funcionario.nome %></li>
+        <li><%= funcionario.cargo %></li>
+        <li><%= funcionario.cpf %></li>
+        <li>Endereço</li>
+        <ul>
+            <li><%= funcionario.endereco.logradouro %></li>
+            <li><%= funcionario.endereco.cidade %></li>
+            <li><%= funcionario.endereco.estado %></li>
+            <li><%= funcionario.endereco.numero %></li>
+        </ul>
+        <li>Telefones</li>
+        <ul>
+        <% funcionario.telefones.each do |telefone| %>
+            <li><%= telefone.numero %></li>
+        <% end %>
+        </ul>
+    </ul>
+<% end %>
