@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :produtos
   resources :funcionarios
   resources :fornecedors
   root "funcionarios#index"
