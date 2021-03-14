@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_150512) do
+ActiveRecord::Schema.define(version: 2021_03_14_211048) do
+
+  create_table "bebida_alcoolicas", force: :cascade do |t|
+    t.string "codigo_de_barras"
+    t.string "nome"
+    t.decimal "valor"
+    t.integer "quantidade_estoque"
+    t.string "identidade_cliente"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "bebida_nao_alcoolicas", force: :cascade do |t|
+    t.string "codigo_de_barras"
+    t.string "nome"
+    t.decimal "valor"
+    t.integer "quantidade_estoque"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "enderecos", force: :cascade do |t|
     t.string "logradouro"
