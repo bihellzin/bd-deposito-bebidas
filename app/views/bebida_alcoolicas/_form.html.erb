@@ -1,10 +1,10 @@
-<%= form_with(model: produto) do |form| %>
-  <% if produto.errors.any? %>
+<%= form_with(model: bebida_alcoolica) do |form| %>
+  <% if bebida_alcoolica.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+      <h2><%= pluralize(bebida_alcoolica.errors.count, "error") %> prohibited this bebida_alcoolica from being saved:</h2>
 
       <ul>
-        <% produto.errors.each do |error| %>
+        <% bebida_alcoolica.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -27,8 +27,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :estoque %>
-    <%= form.number_field :estoque %>
+    <%= form.label :quantidade_estoque %>
+    <%= form.number_field :quantidade_estoque %>
+  </div>
+
+  <div class="field">
+    <%= form.label :identidade_cliente %>
+    <%= form.text_field :identidade_cliente %>
   </div>
 
   <div class="actions">

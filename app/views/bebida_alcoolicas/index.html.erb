@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bebida Alcoolicas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo de barras</th>
+      <th>Nome</th>
+      <th>Valor</th>
+      <th>Quantidade estoque</th>
+      <th>Identidade cliente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bebida_alcoolicas.each do |bebida_alcoolica| %>
+      <tr>
+        <td><%= bebida_alcoolica.codigo_de_barras %></td>
+        <td><%= bebida_alcoolica.nome %></td>
+        <td><%= bebida_alcoolica.valor %></td>
+        <td><%= bebida_alcoolica.quantidade_estoque %></td>
+        <td><%= bebida_alcoolica.identidade_cliente %></td>
+        <td><%= link_to 'Show', bebida_alcoolica %></td>
+        <td><%= link_to 'Edit', edit_bebida_alcoolica_path(bebida_alcoolica) %></td>
+        <td><%= link_to 'Destroy', bebida_alcoolica, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bebida Alcoolica', new_bebida_alcoolica_path %>

@@ -4,10 +4,12 @@ one:
   codigo_de_barras: MyString
   nome: MyString
   valor: 9.99
-  estoque: 1
+  quantidade_estoque: 1
+  identidade_cliente: MyString
 
 two:
   codigo_de_barras: MyString
   nome: MyString
   valor: 9.99
-  estoque: 1
+  quantidade_estoque: 1
+  identidade_cliente: MyString

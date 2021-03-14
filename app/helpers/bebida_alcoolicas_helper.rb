@@ -1,0 +1,2 @@
+module BebidaAlcoolicasHelper
+end
