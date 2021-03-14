@@ -1,0 +1,37 @@
+<%= form_with(model: bebida_nao_alcoolica) do |form| %>
+  <% if bebida_nao_alcoolica.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bebida_nao_alcoolica.errors.count, "error") %> prohibited this bebida_nao_alcoolica from being saved:</h2>
+
+      <ul>
+        <% bebida_nao_alcoolica.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :codigo_de_barras %>
+    <%= form.text_field :codigo_de_barras %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.text_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantidade_estoque %>
+    <%= form.number_field :quantidade_estoque %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

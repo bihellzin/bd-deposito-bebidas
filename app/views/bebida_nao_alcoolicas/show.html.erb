@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo de barras:</strong>
+  <%= @bebida_nao_alcoolica.codigo_de_barras %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @bebida_nao_alcoolica.nome %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @bebida_nao_alcoolica.valor %>
+</p>
+
+<p>
+  <strong>Quantidade estoque:</strong>
+  <%= @bebida_nao_alcoolica.quantidade_estoque %>
+</p>
+
+<%= link_to 'Edit', edit_bebida_nao_alcoolica_path(@bebida_nao_alcoolica) %> |
+<%= link_to 'Back', bebida_nao_alcoolicas_path %>

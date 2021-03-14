@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bebida_nao_alcoolicas
   resources :bebida_alcoolicas
   resources :pedido_clientes
   resources :pedido_fornecedors
