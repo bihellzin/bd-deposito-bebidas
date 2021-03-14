@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @pedido_cliente.quantidade %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @pedido_cliente.valor %>
+</p>
+
+<%= link_to 'Edit', edit_pedido_cliente_path(@pedido_cliente) %> |
+<%= link_to 'Back', pedido_clientes_path %>

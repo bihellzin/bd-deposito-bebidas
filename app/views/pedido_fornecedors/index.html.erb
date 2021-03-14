@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pedido Fornecedors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pedido_fornecedors.each do |pedido_fornecedor| %>
+      <tr>
+        <td><%= pedido_fornecedor.quantidade %></td>
+        <td><%= pedido_fornecedor.valor %></td>
+        <td><%= link_to 'Show', pedido_fornecedor %></td>
+        <td><%= link_to 'Edit', edit_pedido_fornecedor_path(pedido_fornecedor) %></td>
+        <td><%= link_to 'Destroy', pedido_fornecedor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pedido Fornecedor', new_pedido_fornecedor_path %>

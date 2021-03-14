@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @pedido_fornecedor.quantidade %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @pedido_fornecedor.valor %>
+</p>
+
+<%= link_to 'Edit', edit_pedido_fornecedor_path(@pedido_fornecedor) %> |
+<%= link_to 'Back', pedido_fornecedors_path %>

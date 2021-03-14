@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_13_235447) do
+ActiveRecord::Schema.define(version: 2021_03_14_145438) do
 
   create_table "enderecos", force: :cascade do |t|
     t.string "logradouro"
@@ -40,6 +40,26 @@ ActiveRecord::Schema.define(version: 2021_03_13_235447) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "gerente_id"
     t.index ["gerente_id"], name: "index_funcionarios_on_gerente_id"
+  end
+
+  create_table "pedido_clientes", force: :cascade do |t|
+    t.integer "quantidade"
+    t.decimal "valor"
+    t.integer "funcionario_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["funcionario_id"], name: "index_pedido_clientes_on_funcionario_id"
+  end
+
+  create_table "pedido_fornecedors", force: :cascade do |t|
+    t.integer "quantidade"
+    t.decimal "valor"
+    t.integer "funcionario_id"
+    t.integer "fornecedor_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fornecedor_id"], name: "index_pedido_fornecedors_on_fornecedor_id"
+    t.index ["funcionario_id"], name: "index_pedido_fornecedors_on_funcionario_id"
   end
 
   create_table "produtos", force: :cascade do |t|
