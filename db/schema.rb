@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_211048) do
+ActiveRecord::Schema.define(version: 2021_03_14_223617) do
 
   create_table "bebida_alcoolicas", force: :cascade do |t|
     t.string "codigo_de_barras"
@@ -62,40 +62,37 @@ ActiveRecord::Schema.define(version: 2021_03_14_211048) do
   end
 
   create_table "pedido_clientes", force: :cascade do |t|
-    t.integer "quantidade"
-    t.decimal "valor"
     t.integer "funcionario_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "pedido_produto_id"
     t.index ["funcionario_id"], name: "index_pedido_clientes_on_funcionario_id"
+    t.index ["pedido_produto_id"], name: "index_pedido_clientes_on_pedido_produto_id"
   end
 
   create_table "pedido_fornecedors", force: :cascade do |t|
-    t.integer "quantidade"
-    t.decimal "valor"
     t.integer "funcionario_id"
     t.integer "fornecedor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "pedido_produto_id"
     t.index ["fornecedor_id"], name: "index_pedido_fornecedors_on_fornecedor_id"
     t.index ["funcionario_id"], name: "index_pedido_fornecedors_on_funcionario_id"
+    t.index ["pedido_produto_id"], name: "index_pedido_fornecedors_on_pedido_produto_id"
   end
 
   create_table "pedido_produtos", force: :cascade do |t|
-    t.integer "produto_id"
-    t.integer "fornecedor_id"
-    t.integer "funcionario_id"
+    t.integer "quantidade"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "produtos", force: :cascade do |t|
-    t.string "codigo_de_barras"
-    t.string "nome"
-    t.decimal "valor"
-    t.integer "estoque"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "pedido_fornecedor_id"
+    t.integer "pedido_cliente_id"
+    t.integer "bebida_alcoolica_id"
+    t.integer "bebida_nao_alcoolica_id"
+    t.index ["bebida_alcoolica_id"], name: "index_pedido_produtos_on_bebida_alcoolica_id"
+    t.index ["bebida_nao_alcoolica_id"], name: "index_pedido_produtos_on_bebida_nao_alcoolica_id"
+    t.index ["pedido_cliente_id"], name: "index_pedido_produtos_on_pedido_cliente_id"
+    t.index ["pedido_fornecedor_id"], name: "index_pedido_produtos_on_pedido_fornecedor_id"
   end
 
   create_table "telefones", force: :cascade do |t|
