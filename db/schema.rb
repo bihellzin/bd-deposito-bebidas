@@ -26,20 +26,20 @@ ActiveRecord::Schema.define(version: 2021_03_13_235447) do
   end
 
   create_table "fornecedors", force: :cascade do |t|
-    t.integer "cnpj"
+    t.string "cnpj"
     t.string "nome"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "funcionarios", force: :cascade do |t|
-    t.integer "cpf"
+    t.string "cpf"
     t.string "nome"
     t.string "cargo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "gerente_id"
-    t.index ["gerente_id"], name: "gerente_id"
+    t.index ["gerente_id"], name: "index_funcionarios_on_gerente_id"
   end
 
   create_table "produtos", force: :cascade do |t|
