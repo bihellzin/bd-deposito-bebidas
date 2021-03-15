@@ -65,9 +65,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_223617) do
     t.integer "funcionario_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "pedido_produto_id"
     t.index ["funcionario_id"], name: "index_pedido_clientes_on_funcionario_id"
-    t.index ["pedido_produto_id"], name: "index_pedido_clientes_on_pedido_produto_id"
   end
 
   create_table "pedido_fornecedors", force: :cascade do |t|
@@ -75,18 +73,16 @@ ActiveRecord::Schema.define(version: 2021_03_14_223617) do
     t.integer "fornecedor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "pedido_produto_id"
     t.index ["fornecedor_id"], name: "index_pedido_fornecedors_on_fornecedor_id"
     t.index ["funcionario_id"], name: "index_pedido_fornecedors_on_funcionario_id"
-    t.index ["pedido_produto_id"], name: "index_pedido_fornecedors_on_pedido_produto_id"
   end
 
   create_table "pedido_produtos", force: :cascade do |t|
     t.integer "quantidade"
+    t.integer "pedido_cliente_id"
+    t.integer "pedido_fornecedor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "pedido_fornecedor_id"
-    t.integer "pedido_cliente_id"
     t.integer "bebida_alcoolica_id"
     t.integer "bebida_nao_alcoolica_id"
     t.index ["bebida_alcoolica_id"], name: "index_pedido_produtos_on_bebida_alcoolica_id"

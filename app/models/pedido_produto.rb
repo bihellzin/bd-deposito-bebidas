@@ -1,3 +1,4 @@
 class PedidoProduto < ApplicationRecord
-    has_many :pedido_produtos
+    has_one :bebida_alcoolica
+    has_one :bebida_nao_alcoolica
 end
